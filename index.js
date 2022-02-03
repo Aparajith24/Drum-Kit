@@ -1,3 +1,4 @@
+//main
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
    document.querySelectorAll(".drum")[i].addEventListener("click", function(){
        var buttonInnerHTML = this.innerHTML;
@@ -5,11 +6,13 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
        Animation(buttonInnerHTML);
    });
 }
+//Detecting Key press
 document.addEventListener("keypress", function(event) {
     makeSound(event.key);
     Animation(event.key);
   });
 
+//Sound Function
 function makeSound(key) {
     switch (key) {
         case "w":
@@ -45,6 +48,7 @@ function makeSound(key) {
     }
 }
 
+//Animation Function
 function Animation(currentKey) {
     var activeButton = document.querySelector("." + currentKey);
     activeButton.classList.add("pressed");
